@@ -10,6 +10,7 @@
 #
 
 class ArtworkShare < ApplicationRecord
+  validates :viewer, uniqueness: { scope: :artwork }
   belongs_to :viewer,
   foreign_key: :viewer_id,
   class_name: :User
